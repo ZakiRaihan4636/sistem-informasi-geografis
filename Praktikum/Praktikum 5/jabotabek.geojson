@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "jabotabek",
+"features": [
+{ "type": "Feature", "id": 0, "properties": { "nama": "Jakarta", "populasi": 11351.91, "luas": 661.5, "tahun": 2024 }, "geometry": { "type": "Point", "coordinates": [ 106.827139454289977, -6.175605293530595 ] } },
+{ "type": "Feature", "id": 1, "properties": { "nama": "Depok", "populasi": 19678.31, "luas": 200.3, "tahun": 2024 }, "geometry": { "type": "Point", "coordinates": [ 106.81547734847112, -6.410432738252254 ] } },
+{ "type": "Feature", "id": 2, "properties": { "nama": "Bogor", "populasi": 11378.59, "luas": 11850.75, "tahun": 2024 }, "geometry": { "type": "Point", "coordinates": [ 106.807220030081339, -6.601278964015975 ] } },
+{ "type": "Feature", "id": 3, "properties": { "nama": "Tanggerang", "populasi": 19278.15, "luas": 164.5, "tahun": 2024 }, "geometry": { "type": "Point", "coordinates": [ 106.636457889403573, -6.170950799768775 ] } }
+]
+}
