@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Peta</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="">
+
+    </script>
+  <style>
+    #map {
+      height: 100vh;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="map" id="map"></div>
+  <script>
+    var map = L.map('map').setView([-6.3565699, 106.8302537], 13);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+    // var marker = L.marker([-6.3565699, 106.8302537]).addTo(map)
+
+    var popup = L.popup();
+    var aio = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "kampus": "Kampus B STTNF",
+            "kota": "Depok"
+          },
+          "geometry": {
+            "coordinates": [
+              106.83268126053395,
+              -6.35287603592549
+            ],
+            "type": "Point"
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "kampus": "Universitas Indonesia",
+            "kota": "Depok"
+          },
+          "geometry": {
+            "coordinates": [
+              106.82718110188785,
+              -6.361389893510264
+            ],
+            "type": "Point"
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "kampus": "Politeknik Negeri Media Kreatif",
+            "kota": "Jakarta"
+          },
+          "geometry": {
+            "coordinates": [
+              106.82728060226577,
+              -6.34697988086954
+            ],
+            "type": "Point"
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "kampus": "Universitas Pancasila",
+            "kota": "Depok"
+          },
+          "geometry": {
+            "coordinates": [
+              106.83424281876853,
+              -6.33936824661852
+            ],
+            "type": "Point"
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "kampus": "Universitas Gunadarma Kampus E",
+            "kota": "Depok"
+          },
+          "geometry": {
+            "coordinates": [
+              106.8414550013415,
+              -6.3540231771030165
+            ],
+            "type": "Point"
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "kampus": "Kampus A STTNF",
+            "kota": "Depok"
+          },
+          "geometry": {
+            "coordinates": [
+              106.84438856617118,
+              -6.362289418842053
+            ],
+            "type": "Point"
+          }
+        }
+      ]
+    }
+
+    L.geoJSON(aio, {
+      pointToLayer: function (feature, latlng) {
+        return L.marker(latlng);
+      },
+      onEachFeature: function (feature, layer) {
+        layer.bindPopup(feature.properties.kampus + "<br>" + feature.properties.kota);
+      }
+    }).addTo(map);
+
+  </script>
+
+</body>
+
+</html>
